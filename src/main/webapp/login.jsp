@@ -7,13 +7,15 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%
-    if(request.getMethod().equalsIgnoreCase("post")) {
+    if (request.getMethod().equalsIgnoreCase("post")) {
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         if (username.equalsIgnoreCase("admin") && password.equals("password")) {
             response.sendRedirect("/profile.jsp");
         }
     }
+
+
 %>
 
 
@@ -26,7 +28,7 @@
 <form method="POST" action="${pageContext.request.contextPath}/login.jsp">
     <input type="text" name="username" placeholder="Enter a Username">
     <input type="password" name="password" placeholder="Enter a password">
-    <input type="submit">
+    <input type="submit" value="Log in">
 </form>
 </body>
 </html>
